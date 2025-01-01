@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sample</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sample.css">
+
+</head>
+<body>
+
+    <p><a href="#info" class="modal-open">お知らせを開く</a></p>
+
+    <!--表示エリアのHTML。id 名にリンク先と同じ名前を指定します。※表示エリアはHTML の変更が可能なので、レイアウトを自由に変更できます。-->
+    <section id="info">
+    <h2>※注意※</h2>
+    <p>これはサンプルです</p>
+    </section>
+
+    <ul class="tab gnavi">
+        <li class="current"><a href="#typeA"><span>slider</span></a></li>
+        <li><a href="#typeB"><span>accordion</span></a></li>
+        <li><a href="#typeC"><span>news</span></a></li>
+        <li><a href="#typeD"><span>hamburger</span></a></li>
+        <li><a href="#typeE"><span>slider2</span></a></li>
+        <li><a href="#typeF"><span>gallery</span></a></li>
+        <li><a href="#typeG"><span>fancybox</span></a></li>
+    </ul>
+        
+    <div id="typeA" class="area">
+        <h2>slider</h2>
+        <ul class="slider">
+            <li><img src="img_sample/a.png" alt="a"></li>
+            <li><img src="img_sample/b.png" alt="b"></li>
+            <li><img src="img_sample/c.png" alt="c"></li>
+            <li><img src="img_sample/d.png" alt="d"></li>
+            <!--/slider-->
+        </ul>
+        <!--/area-->
+    </div>
+
+    <div id="typeB" class="area">
+        <h2>accordion</h2>
+        <ul class="accordion-area">
+
+            <li><!--li ~ /li までが一つのアコーディオン-->
+            <section>
+            <h3 class="title">タイトル</h3>
+            <div class="box">
+            <p>内容が入ります。</p>
+            </div>
+            </section>
+            </li>
+            
+            <li>
+            <section>
+            <h3 class="title">タイトル</h3>
+            <div class="box">
+            <p>内容が入ります。</p>
+            </div>
+            </section>
+            </li>
+ 
+            <li>
+            <section>
+            <h3 class="title">タイトル</h3>
+            <div class="box">
+            <p>内容が入ります。</p>
+            </div>
+            </section>
+            </li>
+
+            </ul>
+
+        <!--/area-->
+    </div>
+
+    <div id="typeC" class="area">
+        <h2>news</h2>
+
+        <ul class="news">
+            <li><a href="#"><span>2021.11.01</span>1つめのニュースの記事です。</a></li>
+            <li><a href="#"><span>2021.11.02</span>2つめのニュースの記事です。</a></li>
+            <li><a href="#"><span>2021.11.03</span>3つめのニュースの記事です。</a></li>
+        </ul>
+        <!--/area-->
+    </div>
+
+        <!--/area-->
+    <div id="typeD" class="area">
+        <h2>hamburger</h2>
+        <div class="openbtn"><div class="openbtn-area"><span></span><span></span><span></span></div></div></li>
+        <div class="openbtn2"><span></span><span></span><span></span></div>
+        <div class="openbtn3"><div class="openbtn-area3"><span></span><span></span><span></span></div></div>
+        <!--/area-->
+    </div>
+
+    <div id="typeE" class="area">
+        <h2>slider2</h2>
+        <div class="slider2">
+            <ul class="slider-top">
+            <li class="slider-item slider-item01"></li>
+            <li class="slider-item slider-item02"></li>
+            <li class="slider-item slider-item03"></li>
+            </ul>
+            <ul class="slider-bottom" dir="rtl"><!--/スライダの表示方向を左⇒右に変更するためにdir="rtl"を追加-->
+            <li class="slider-item slider-item03"></li>
+            <li class="slider-item slider-item04"></li>
+            <li class="slider-item slider-item01"></li>
+            </ul>
+            <!--/slider-->
+        </div>
+            <!--/area-->       
+    </div>
+
+    <div id="typeF" class="area">
+        <h2>gallery</h2>
+        <ul class="gallery">
+            <li><img src="img_sample/a.png" alt=""></li>
+            <li><img src="img_sample/b.png" alt=""></li>
+            <li><img src="img_sample/c.png" alt=""></li>
+            <li><img src="img_sample/d.png" alt=""></li>
+        </ul>
+        <ul class="choice-btn">
+            <li><img src="img_sample/a.png" alt=""></li>
+            <li><img src="img_sample/b.png" alt=""></li>
+            <li><img src="img_sample/c.png" alt=""></li>
+            <li><img src="img_sample/d.png" alt=""></li>
+        </ul>
+            <!--/area-->       
+    </div>
+
+    <div id="typeG" class="area">
+        <h2>fancybox</h2>
+        <ul class="sort-btn"> 
+            <li><dl><dt>All</dt><dd><ul><li class="all active">ALL</li></ul></dd></dl></li>
+            <li><dl><dt>Color</dt><dd><ul>
+            <li class="color01">purple</li>
+            <li class="color02">green</li>
+            <li class="color03">orange</li>
+            <li class="color04">blue</li> 
+            </ul></dd></dl></li>
+            <li><dl><dt>Category</dt><dd><ul>
+            <li class="cat01">EVENT</li>
+            <li class="cat02">ITEMS</li>
+            </ul></dd></dl></li>
+            <!--/sort-btn-->
+        </ul>
+        <ul class="grid"><!--1番外側のタグにgrid というクラス名を付与。-->
+
+            <li class="item cat02 color04"><!--li には、item というクラス名と並び替え基準となる複数のクラス名（チェックボックスのクラス名と同じ名前）を付与。-->
+            <div class="item-content"><!--内側のdivには高さを維持するためにitem-contentというクラス名をつける。-->
+            <a href="img_sample/a.png" data-fancybox="group1" datafancybox="groupA" data-caption="グループ1キャプション"><img src="img_sample/a.png" alt=""></a><!--複数画像をグループ化してサムネ
+            イル表示させたい場合は、datafancybox="半角英数字で同一のグループ名"、キャプションを入れたい場合はdata-caption="キャプションタイトル"を設定する。-->
+            </div>
+            </li>
+
+            <li class="item cat01 color01">
+            <div class="item-content">
+            <a href="img_sample/b.png" data-fancybox="group2" datafancybox="groupB" data-caption="グループ2キャプション"><img src="img_sample/b.png" alt=""></a>
+            </div>
+            </li>
+
+            <li class="item cat02 color02">
+            <div class="item-content">
+            <a href="img_sample/c.png" data-fancybox="group3" datafancybox="groupC" data-caption="グループ3キャプション"><img src="img_sample/c.png" alt=""></a>
+            </div>
+            </li>
+
+            <li class="item cat01 color03">
+                <div class="item-content">
+                <a href="img_sample/d.png" data-fancybox="group4" datafancybox="groupD" data-caption="グループ4キャプション"><img src="img_sample/d.png" alt=""></a>
+                </div>
+            </li>
+
+        </ul> 
+            <!--/area--> 
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
+
+    <script src="https://unpkg.com/web-animations-js@2.3.2/web-animations.min.js"></script>
+    <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <!--自作のJS-->
+    <script src="js/sample.js"></script>
+</body>
+</html>

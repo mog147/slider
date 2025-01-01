@@ -1,0 +1,827 @@
+/* 共通----------------------------------------- */
+h2,p {
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+}
+
+a {
+      outline: none;
+      text-decoration:none;
+      color: #333;
+      white-space: nowrap;
+    }
+
+ul{
+    padding-left:0;
+    }
+    
+li{
+list-style:none;
+}
+ 
+ /* modal----------------------------------------- */
+
+ /*infoエリアをはじめは非表示*/
+ #info{
+	display: none;
+}
+
+/*モーダルの横幅を変更したい場合*/
+.modaal-container{
+    max-width: 600px;
+}
+
+/*モーダルのボタンの色を変更したい場合*/
+.modaal-close:after, 
+.modaal-close:before{
+	background:#ccc;	
+}
+
+.modaal-close:focus:after,
+.modaal-close:focus:before,
+.modaal-close:hover:after,
+.modaal-close:hover:before{
+	background:#666;
+}
+
+
+/*==================================================
+スライダーのためのcss
+===================================*/    
+
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+    padding: 0;
+ }
+ 
+ .slider img {
+     width:100%;/*スライダー内の画像を横幅100%に*/
+     height:auto;
+ }
+ 
+ /*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+ 
+ .slider .slick-slide {
+     margin:0 10px;
+ }
+ 
+ /*矢印の設定*/
+ 
+ /*戻る、次へ矢印の位置*/
+ .slick-prev, 
+ .slick-next {
+     position: absolute;/*絶対配置にする*/
+     top: 42%;
+     cursor: pointer;/*マウスカーソルを指マークに*/
+     outline: none;/*クリックをしたら出てくる枠線を消す*/
+     border-top: 2px solid #666;/*矢印の色*/
+     border-right: 2px solid #666;/*矢印の色*/
+     height: 15px;
+     width: 15px;
+ }
+ 
+ .slick-prev {/*戻る矢印の位置と形状*/
+     left: -1.5%;
+     transform: rotate(-135deg);
+ }
+ 
+ .slick-next {/*次へ矢印の位置と形状*/
+     right: -1.5%;
+     transform: rotate(45deg);
+ }
+ 
+ /*ドットナビゲーションの設定*/
+ 
+ .slick-dots {
+     text-align:center;
+     margin:20px 0 0 0;
+ }
+ 
+ .slick-dots li {
+     display:inline-block;
+     margin:0 5px;
+ }
+ 
+ .slick-dots button {
+     color: transparent;
+     outline: none;
+     width:8px;/*ドットボタンのサイズ*/
+     height:8px;/*ドットボタンのサイズ*/
+     display:block;
+     border-radius:50%;
+     background:#f2f2f2;/*ドットボタンの色*/
+ }
+ 
+ .slick-dots .slick-active button{
+     background:#333;/*ドットボタンの現在地表示の色*/
+ }
+ 
+
+/* tab----------------------------------------- */
+
+/*tabの形状*/
+.tab{
+	display: flex;
+	flex-wrap: wrap;
+}
+.tab li a{
+	display: block;
+	background:f2f2f2;
+	margin:0 2px;
+	padding:10px 20px;
+}
+/*liにactiveクラスがついた時の形状*/
+.tab li.active a{
+	background:#fff;
+}
+
+
+/*エリアの表示非表示と形状*/
+.area {
+	display: none;/*はじめは非表示*/
+	opacity: 0;/*透過0*/
+	background: #fff;
+	padding:50px 20px;
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+
+/* accordion----------------------------------------- */
+
+/*アコーディオン全体*/
+.accordion-area{
+    list-style: none;
+    width: 96%;
+    max-width: 900px;
+    margin:0 auto;
+}
+
+.accordion-area li{
+    margin: 10px 0;
+}
+
+.accordion-area section {
+	border: 1px solid #ccc;
+}
+
+/*アコーディオンタイトル*/
+.title {
+    position: relative;/*+マークの位置基準とするためrelative指定*/
+    cursor: pointer;
+    font-size:1rem;
+    font-weight: normal;
+    padding: 3% 3% 3% 50px;
+    transition: all .5s ease;
+}
+
+/*アイコンの＋と×*/
+.title::before,
+.title::after{
+    position: absolute;
+    content:'';
+    width: 15px;
+    height: 2px;
+    background-color: #333;
+    
+}
+.title::before{
+    top:48%;
+    left: 15px;
+    transform: rotate(0deg);
+    
+}
+.title::after{    
+    top:48%;
+    left: 15px;
+    transform: rotate(90deg);
+
+}
+
+/*　closeというクラスがついたら形状変化　*/
+
+.title.close::before{
+	transform: rotate(45deg);
+}
+
+.title.close::after{
+	transform: rotate(-45deg);
+}
+
+/*アコーディオンで現れるエリア*/
+.box {
+    display: none;/*はじめは非表示*/
+    background: #f3f3f3;
+	margin:0 3% 3% 3%;
+    padding: 3%;
+}
+
+
+/* news----------------------------------------- */
+
+/*ニュース1行の周りの余白*/
+.news a{
+    display: block;
+    background:#fff;
+    padding:30px;
+}
+
+/*日付*/
+.news span {
+    display:inline-block;
+    font-size:0.8rem;
+    margin-right:10px;
+    color:#777;
+}
+
+/*768px以下の見た目 ※1行のままにしたい場合は不要　*/
+@media screen and (max-width:768px) {
+    .news {
+        padding:20px;
+        background:#fff;
+    }
+
+    .news li {
+        border-bottom:1px dashed #ccc;
+    }
+
+    .news li:last-child {
+        border-bottom:none;
+    }
+    .news span {
+        display:block;
+		padding-bottom:10px;
+    }
+}
+
+/* テキストナビゲーション 左右から線が伸びて枠線になる-----------------------------------------*/
+/*==================================================
+共通　横並びのための設定
+===================================*/
+.gnavi{
+    display: flex;
+    flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+    margin:0 0 50px 0;
+    list-style: none;
+}
+
+.gnavi li a{
+    display: block;
+    padding:10px 30px;
+    text-decoration: none;
+    color: #333;
+}
+
+/*==================================================
+　5-3-11 左右から線が伸びて枠線になる
+===================================*/
+
+.gnavi li{
+    /*線の基点とするためrelativeを指定*/
+  position: relative;
+    margin:0 10px;
+}
+
+/*線の基点位置*/
+.gnavi li::before,
+.gnavi li::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width: 0;
+  height:2px;
+  background:#0481A2;
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+  transition-delay: 0.2s;
+}
+
+.gnavi li::before{
+  right: 0;
+  top: 0;
+}
+.gnavi li::after{
+  left: 0;
+  bottom: 0;
+}
+
+/*線の基点位置2 spanタグ*/
+
+.gnavi li span{
+  display: block;
+}
+
+.gnavi li span::before,
+.gnavi li span::after{
+  content:"";
+    /*絶対配置で線の位置を決める*/
+  position: absolute;
+    /*線の形状*/
+  width:2px;
+  height:0;
+  background: #0481A2;
+/*アニメーションの指定*/
+  transition: all 0.2s linear;
+}
+
+.gnavi li span::before{
+  left: 0;
+  top: 0;
+}
+.gnavi li span::after{
+  right: 0;
+  bottom: 0;
+}
+
+/*現在地とhoverした際の線の変化*/
+
+.gnavi li.current::before,
+.gnavi li.current::after,
+.gnavi li:hover::before,
+.gnavi li:hover::after{
+  width: 100%;/*横幅を100%に*/
+}
+
+.gnavi li.current span::before,
+.gnavi li.current span::after,
+.gnavi li:hover span::before,
+.gnavi li:hover span::after{
+  height: 100%;/*縦幅を100%に*/
+}
+
+
+/* hamburger */
+
+/*==================================================
+　5-2-7 3本線が奥行きを持って回転して×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	background:#83179E;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+}
+
+/*ボタン内側*/
+
+.openbtn .openbtn-area{
+    transition: all .4s;
+}
+
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background: #fff;
+  	width: 45%;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+/*activeクラスが付与されると
+線と周りのエリアが回転して×になる*/
+
+.openbtn.active .openbtn-area{
+	transform: rotateY(-360deg);
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-135deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(135deg);
+    width: 30%;
+}
+
+
+/* hamburger2 */
+/*==================================================
+　5-2-4 MENUがCLOSEに
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn2{
+	/*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+	position: relative;
+	background:#D54884;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+	border-radius: 5px;
+}
+
+/*ボタン内側*/
+.openbtn2 span{
+    display: inline-block;
+    transition: all .4s;/*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+	background: #fff;
+  	width: 45%;
+  }
+
+
+.openbtn2 span:nth-of-type(1) {
+	top:13px;	
+}
+
+.openbtn2 span:nth-of-type(2) {
+	top:19px;
+}
+
+.openbtn2 span:nth-of-type(3) {
+	top:25px;
+}
+
+.openbtn2 span:nth-of-type(3)::after {
+	content:"Menu";/*3つ目の要素のafterにMenu表示を指定*/
+	position: absolute;
+	top:5px;
+	left:-2px;
+	color: #fff;
+	font-size: 0.6rem;
+	text-transform: uppercase;
+}
+
+/*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+.openbtn2.active span:nth-of-type(1) {
+    top: 14px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn2.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn2.active span:nth-of-type(3){
+    top: 26px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+
+.openbtn2.active span:nth-of-type(3)::after {
+	content:"Close";/*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+	top:5px;
+	left:4px;
+}
+
+/* hamburger3 */
+/*==================================================
+　5-2-9 3本線がジャンプして×に
+===================================*/
+
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn3{
+    /*ボタン内側の基点となるためrelativeを指定。
+    追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+        position: relative;
+        background:#2BA99B;
+        cursor: pointer;
+        width: 50px;
+        height:50px;
+        border-radius: 5px;
+        overflow: hidden;/*ジャンプしてはみ出た要素を消す*/
+    }
+        
+    /*ボタン内側*/
+    
+    .openbtn3 .openbtn3-area{
+        transition: all .4s;/*アニメーションの設定*/
+    }
+    
+    .openbtn3 span{
+        display: inline-block;
+        transition: all .4s;/*アニメーションの設定*/
+        position: absolute;
+        left: 14px;
+        height: 3px;
+        border-radius: 2px;
+        background: #fff;
+          width: 45%;
+      }
+    
+    
+    .openbtn3 span:nth-of-type(1) {
+        top:15px;	
+    }
+    
+    .openbtn3 span:nth-of-type(2) {
+        top:23px;
+    }
+    
+    .openbtn3 span:nth-of-type(3) {
+        top:31px;
+    }
+    
+    
+    /*activeクラスが付与されると .openbtn3-areaが360度回転し、
+    その中の線のtopの位置や形状が変化して×に*/
+    
+    .openbtn3.active .openbtn3-area{
+        transform: rotateX(360deg);
+    }
+    
+    .openbtn3.active span:nth-of-type(1) {
+        top: 18px;
+        left: 18px;
+        transform: translateY(6px) rotate(-135deg);
+        width: 30%;
+    }
+    
+    .openbtn3.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    
+    .openbtn3.active span:nth-of-type(3){
+        top: 30px;
+        left: 18px;
+        transform: translateY(-6px) rotate(135deg);
+        width: 30%;
+    }
+
+/* slider2 */
+/*==================================================
+スライダー2のためのcss
+===================================*/
+.slider2 {
+    position:relative;
+	z-index: 1;
+	/*↑z-indexの値をh1のz-indexの値よりも小さくして背景に回す*/
+	height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+.slider-top,
+.slider-bottom {
+    height: 50vh;/*スライダー上下の縦幅を画面の高さの半分（50vh）にする*/
+}
+
+/*　背景画像設定　*/
+
+.slider-item01 {
+    background:url(../img_sample/a.png);
+}
+
+.slider-item02 {
+    background:url(../img_sample/b.png);
+}
+
+.slider-item03 {
+    background:url(../img_sample/c.png);
+}
+
+.slider-item04 {
+    background:url(../img_sample/d.png);
+}
+
+
+
+.slider-item {
+    width: 100%;/*各スライダー全体の横幅を画面の高さいっぱい（100%）にする*/
+    height:50vh;/*各スライダーの縦幅を画面の高さの半分（50vh）にする*/
+    background-repeat: no-repeat;/*背景画像をリピートしない*/
+    background-position: center;/*背景画像の位置を中央に*/
+    background-size: cover;/*背景画像が.slider-item全体を覆い表示*/
+}
+
+/* gallary */
+/*==================================================
+スライダーのためのcss
+===================================*/
+
+/*画像の横幅を100%にしてレスポンシブ化*/
+img{
+	width: 100%;
+	height: auto;
+	vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
+
+/*メイン画像下に余白をつける*/
+.gallery{
+margin:0 0 5px 0;
+}
+
+.gallery li{
+list-style:none;
+}
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev, 
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+	z-index: 3;
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #ccc;/*矢印の色*/
+    border-right: 2px solid #ccc;/*矢印の色*/
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left:2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right:2.5%;
+    transform: rotate(45deg);
+}
+
+/*選択するサムネイル画像の設定*/
+
+.choice-btn li{
+	cursor: pointer;
+	outline: none;
+	background:#333;
+    list-style:none;
+}
+
+.choice-btn li img{
+	opacity: 0.4;/*選択されていないものは透過40%*/
+}
+
+.choice-btn li.slick-current img{
+	opacity: 1;/*選択されているものは透過しない*/
+}
+
+/*==================================================
+ギャラリー2のためのcss
+===================================*/
+/*＝＝＝並び替えボタンチェックマークのCSS*/
+.sort-btn{
+	background: #f3f3f3;
+	padding: 20px;
+	margin:50px 0;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.sort-btn dt{
+	font-weight: bold;
+	margin:0 0 10px 0;
+}
+
+.sort-btn dd{
+	margin:0 0 10px 0;
+}
+
+.sort-btn ul{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.sort-btn li{
+	margin:0 10px;
+list-style:none;
+}
+
+.sort-btn ul li{
+	position: relative;
+	cursor: pointer;
+	padding:0 0 0 30px;
+	margin:0 10px 0 0;
+}
+
+/*横幅が810px以下になった際の指定*/
+@media only screen and (max-width: 810px) {
+.sort-btn li{
+	width:100%;
+	margin:0;
+}
+	
+.sort-btn ul li{
+	width:auto;
+}
+	
+}
+
+/*チェックマークの設定*/
+.sort-btn ul li::before{
+	content:'';
+	position: absolute;
+	left:0;
+	width:20px;
+	height:20px;
+	border:2px solid #ccc;
+}
+
+.sort-btn ul li.active::after{/*現在地＝activeというクラス名がついたらチェックマークを出現*/
+	content:'';
+	position: absolute;
+	left:5px;	
+	top:0;
+    /*チェックマークの色や形*/
+	border-left:2px solid #333;
+	border-bottom:2px solid #333;
+	width:16px;
+	height:9px;
+	transform:rotate(-45deg);
+}
+
+
+
+/*＝＝＝Muuriのレイアウトのための調整 */
+.grid {
+  position: relative;/*並び替えの基準点を指定*/
+}
+
+/*各画像の横幅などの設定*/
+.item {
+  display: block;
+  position: absolute;
+  width: 33%;/*横並びで3つ表示*/
+  padding:0 10px 10px 10px;/*画像に余白をつける*/
+  z-index: 1;
+list-style:none;
+}
+
+/*内側のボックスの高さが崩れないように維持*/
+.item-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/*画像の横幅を100%にしてレスポンシブ化*/
+.grid img{
+	width:100%;
+	height:auto;
+	vertical-align: bottom;/*画像の下にできる余白を削除*/
+}
+
+/*横幅が768px以下になった際の指定*/
+@media only screen and (max-width: 768px) {
+.item {
+  width: 49.5%;/*横並びで2つ表示*/
+  padding: 0 5px 10px 5px;
+}
+}
+
+
+/*＝＝＝fancyboxサムネイル背景と画像選択時の枠線の指定*/
+.fancybox-thumbs {
+    background: transparent!important;
+}
+
+.fancybox-thumbs__list a:before {
+    border: 6px solid #FA999B;
+}
